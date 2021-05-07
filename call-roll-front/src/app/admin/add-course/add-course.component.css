@@ -1,0 +1,17 @@
+form{
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    margin: auto;
+    padding: 30px;
+}
+
+input, textarea {
+    margin: 10px auto;
+    padding: 8px 16px;
+}
+
+.table1 {
+    width: 100%;
+    margin-bottom: 1rem;
+}

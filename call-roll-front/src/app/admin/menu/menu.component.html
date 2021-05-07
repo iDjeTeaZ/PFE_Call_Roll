@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!--<span class="navbar-brand" href="#">Menu</span>-->
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngClass]="{ 'show': navbarOpen }">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href routerLink="/admin" (click)="toggleNavbar()">Ajouter un cours</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href routerLink="/admin/usersList/1" (click)="toggleNavbar()">Liste des étudiants</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href routerLink="/admin/usersList/2" (click)="toggleNavbar()">Liste des professeurs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href routerLink="/admin/usersList/3" (click)="toggleNavbar()">Liste des administrateurs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href routerLink="/admin/add-user" (click)="toggleNavbar()">Ajouter un utilisateur</a>
+        </li>
+      </ul>
+    </div>
+  </nav>

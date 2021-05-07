@@ -1,0 +1,84 @@
+<div class="card m-3">
+    <div class="row no-gutters">
+        <div class="mx-auto my-auto">
+            <img [src]="servUsers.student.photo">
+        </div>
+        <div class="card m-3 col-md-8">
+            <div class="card-header" id="headingOne">
+                <h3 class="card-title">{{servUsers.student.lastname}}, {{servUsers.student.firstname}}</h3>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    <p class="card-text"><em>Email : {{servUsers.student.email}}</em></p>
+                    <p class="card-text"><em>Promotion : {{servUsers.student.promotion}}</em></p>
+                    <p class="card-text"><em>Spécialité : {{servUsers.student.specialty}}</em></p>
+                    <p class="card-text"><em>Groupe : {{servUsers.student.group}}</em></p>   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card m-3">
+    <div class="card-header" id="headingOne">
+        <h3 class="card-title">
+            Absences
+        </h3>
+    </div>
+    <div class ="card-body">
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Cours</th>
+                <th scope="col">Professeur</th>
+                <th scope="col">Date</th>
+                <th scope="col">Heure</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let abs of servUsers.absences">
+                <td>{{abs.name}}</td>
+                <td>{{abs.teacher}}</td>
+                <td>{{abs.startDate.getDate()}}/{{abs.startDate.getMonth()}}/{{abs.startDate.getFullYear()}}</td>
+                <td>{{abs.startDate.getHours()}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+<div class="card m-3">
+    <div class="card-header" id="headingOne">
+        <h3 class="card-title">
+            Formulaire d'édition d'un étudiant
+        </h3>
+    </div>
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+            <form #f="ngForm" (ngSubmit)="sendForm(f)">
+                <input class="form-control" name="firstname" [(ngModel)]="student.firstname" #ctlNom="ngModel" placeholder="Prénom" type="text" required>
+                <input class="form-control" name="lastname" [(ngModel)]="student.lastname" #ctlPrenom="ngModel" placeholder="Nom" type="text" required>
+                <input class="form-control" name="email" [(ngModel)]="student.email" #ctlMail="ngModel" placeholder="Email" type="email" required>
+                <input class="form-control" name="password" [(ngModel)]="password" #ctlMail="ngModel" placeholder="Password" type="password">
+                <input class="form-control" name="photo" [(ngModel)]="student.photo" placeholder="Photo" type="text">
+                <input class="form-control" name="promotion" [(ngModel)]="student.promotion" placeholder="Promotion" type="text" required>
+                <input class="form-control" name="specialty" [(ngModel)]="student.specialty" placeholder="Spécialité" type="text" required>
+                <input class="form-control" name="group" [(ngModel)]="student.group" placeholder="Groupe" type="text">
+                <input class="btn btn-primary" name="envoyer" type="submit" value="ENVOYER" [disabled]="f.invalid">
+                <input class="btn btn-primary" name="annuler" type="reset" value="ANNULER">
+            </form>
+        </div>
+    </div>
+</div>
+<div class="card m-3">
+    <div class="card-header" id="headingOne">
+        <h3 class="card-title">
+            Supprimer un étudiant
+        </h3>
+    </div>
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body delete">
+            <button (click)="deleteUser()" class="btn btn-danger" >
+                <span>Supprimer</span>
+            </button>
+        </div>
+    </div>
+</div>

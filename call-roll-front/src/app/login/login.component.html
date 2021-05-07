@@ -1,0 +1,17 @@
+<div class="card m-3">
+    <div class="card-header" id="headingOne">
+        <h3 class="mb-0">
+            Login
+        </h3>
+    </div>
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+        <form #f="ngForm" (ngSubmit)="sendForm()">
+            <input class="form-control" name="email" [(ngModel)]="user.email" placeholder="Your mail" type="email" required>
+            <input class="form-control" name="password" [(ngModel)]="user.password" #ctlMdp="ngModel" placeholder="Your password" type="password" required minlength="4">
+            <input class="btn btn-primary" name="envoyer" type="submit" value="Send" [disabled]="f.invalid">
+            <input class="btn btn-primary" name="annuler" type="reset" value="Reset">
+        </form>
+        </div>
+    </div>
+</div>

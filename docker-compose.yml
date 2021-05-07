@@ -1,0 +1,13 @@
+version: "3.3"
+services:
+    back:
+        build: call-roll-back
+        container_name: call-roll-back
+        ports:
+          - 5001:5001
+
+    front:
+       build: call-roll-front
+       container_name: call-roll-front
+       ports:
+          - 4200:4200

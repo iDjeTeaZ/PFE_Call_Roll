@@ -1,0 +1,29 @@
+table tr:nth-child(odd){
+  background-color:#DEE4EC;
+}
+
+.ng-star-inserted {
+  width: 100%;
+}
+
+.tab_element{
+	width: 25%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container{
+	margin-top:5px;
+	margin-bottom:8px;
+}
+
+.center{
+	margin-right: auto;
+	margin-left:auto;
+}
+
+.title{
+	text-align: center;
+	font-size: 18px;
+}

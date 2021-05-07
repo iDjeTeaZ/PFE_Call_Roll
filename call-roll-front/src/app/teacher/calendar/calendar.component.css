@@ -1,0 +1,24 @@
+.callroll_yes{
+	
+	background-color: #14b325;
+	width: 65px;
+	height: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+}
+
+.callroll_no{
+	background-color: #e30f0f;
+	width: 65px;
+	height: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+}
+
+table tr:nth-child(odd){
+  background-color:#DEE4EC;
+}

@@ -1,0 +1,19 @@
+<div class="card m-3 col-md-8 d-flex w-100 justify-content-between-center">
+
+	<div class="center container title"> Liste des absences </div>
+
+	<table class= "flex-d flex-column w-75 center">
+		<tr class="d-flex flex-row justify-content-between" >
+			<div class="tab_element"> Matière </div>
+			<div class="tab_element"> Le </div>
+			<div class="tab_element"> De </div>
+			<div class="tab_element"> à </div>
+		</tr>
+		<tr class="d-flex flex-row justify-content-between" *ngFor= "let absence of absences">
+			<div class="tab_element"> {{absence.nom}} </div>
+			<div class="tab_element"> {{absence.start.getDate()}}/{{absence.start.getMonth()}}/{{absence.start.getFullYear()}}  </div>
+			<div class="tab_element"> {{absence.start.getHours()}} </div>
+			<div class="tab_element"> {{absence.end.getHours()}} </div>
+		</tr>
+	</table>
+</div>

@@ -1,0 +1,45 @@
+<div class="card m-3">
+    <div class="card-header" id="headingOne">
+        <h3 *ngIf="userType == 1" class="mb-0">
+            Liste des étudiants
+        </h3>
+        <h3 *ngIf="userType == 2" class="mb-0">
+            Liste des professeurs
+        </h3>
+        <h3 *ngIf="userType == 3" class="mb-0">
+            Liste des administrateurs
+        </h3>
+    </div>
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+            <div class="d-inline card-group justify-content-center">
+                <div class="row justify-content-center">
+                    <div class="col justify-content-center">
+                        <input class="form-control" name="triLastname" [(ngModel)]="triLastname" #ctrlTri="ngModel" placeholder="Filtrer par nom" type="text">
+                    </div>
+                    <div class="col justify-content-center">
+                        <input class="form-control" name="triFirstname" [(ngModel)]="triFirstname" #ctrlTri="ngModel" placeholder="Filtrer par prénom" type="text">
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="card m-2" *ngFor="let user of servUsers.usersList | userLastnamePipe:triLastname | userFirstnamePipe:triFirstname | slice:pagination.min:pagination.max; let i=index">
+                        <div class="card-body">
+                            <img [src]="user.photo">
+                        </div>
+                        <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                                <button (click)="getUser(user._id)" class="btn btn-link" >
+                                    <span>{{user.lastname | uppercase}}, {{user.firstname}}</span>
+                                </button>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center justify-content-center">
+                    <button class="btn btn-primary m-2 btn-size" (click)="setPagination(-3)"><fa-icon [icon]="faArrowCircleLeft"></fa-icon></button>
+                    <button class="btn btn-primary m-2 btn-size" (click)="setPagination(3)"><fa-icon [icon]="faArrowCircleRight"></fa-icon></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

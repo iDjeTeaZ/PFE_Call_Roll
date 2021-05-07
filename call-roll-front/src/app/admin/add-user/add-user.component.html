@@ -1,0 +1,29 @@
+<div class="card m-3">
+    <div class="card-header" id="headingOne">
+        <h3 class="card-title">
+            Formulaire d'ajout d'un utilisateur
+        </h3>
+    </div>
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+            <form #f="ngForm" (ngSubmit)="sendForm(f)">
+                <select class="form-control" name="status" size="1" [(ngModel)]="status" (change)="onChange()">
+                    <option>Etudiant
+                    <option>Professeur
+                    <option>Administrateur
+                </select>
+                <input class="form-control" name="firstname" [(ngModel)]="firstname" #ctlNom="ngModel" placeholder="Prénom" type="text" required>
+                <input class="form-control" name="lastname" [(ngModel)]="lastname" #ctlPrenom="ngModel" placeholder="Nom" type="text" required>
+                <input class="form-control" name="email" [(ngModel)]="email" #ctlMail="ngModel" placeholder="Email" type="email" required>
+                <input class="form-control" name="password" [(ngModel)]="password" #ctlMail="ngModel" placeholder="Password" type="password" required>
+                <input class="form-control" name="photo" [(ngModel)]="photo" placeholder="Photo" type="text">
+                <input *ngIf="displayPromotion" class="form-control" name="promotion" [(ngModel)]="promotion" placeholder="Promotion" type="text" required>
+                <input *ngIf="displaySpecialty" class="form-control" name="specialty" [(ngModel)]="specialty" placeholder="Spécialité" type="text" required>
+                <input *ngIf="displayGroup" class="form-control" name="group" [(ngModel)]="group" placeholder="Groupe" type="text">
+                <input *ngIf="displayClassManager" class="form-control" name="classManager" [(ngModel)]="classManager" placeholder="Professeur Principal" type="text">
+                <input class="btn btn-primary" name="envoyer" type="submit" value="ENVOYER" [disabled]="f.invalid">
+                <input class="btn btn-primary" name="annuler" type="reset" value="ANNULER">
+            </form>
+        </div>
+    </div>
+</div>

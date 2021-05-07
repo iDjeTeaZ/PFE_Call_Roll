@@ -1,0 +1,59 @@
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+
+
+
+
+
+/* You can add global styles to this file, and also import other style files */
+
+
+
+body
+{
+    background-color: #EFEFEF; 
+    color: #5F6663;
+}
+
+.title-header {
+    background-color: #2660AA;
+    color: white; 
+}
+
+.bg-light{
+    background-color: white!important;
+}
+
+/* Bouton */
+
+.btn-primary {
+    background-color: #A6BCD7;
+    border-color: #A6BCD7;
+}
+
+.btn:disabled {
+    background-color: #5F6663;
+    border-color: #5F6663;
+}
+
+.btn-link {
+    color: #5F6663;
+}
+
+/* Carte */
+
+
+
+.card-header {
+    background-color: #A6BCD7;
+}
+
+/* Formulaire */
+
+input.ng-valid, textarea.ng-invalid{
+    border: 1px solid green;
+}
+
+input.ng-invalid, textarea.ng-invalid{
+    border: 1px solid red;
+}
+
